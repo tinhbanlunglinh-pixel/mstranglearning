@@ -83,7 +83,7 @@ export const LessonCertificate: React.FC<LessonCertificateProps> = ({
             {/* Header */}
             <div className="text-center">
               <div className="w-14 h-14 bg-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-2 shadow-lg">🏫</div>
-              <p className="text-xs font-bold text-brand-600 uppercase tracking-[0.25em] mb-1">Trung tâm Ngoại Ngữ English Ms Trang</p>
+              <p className="text-xs font-bold text-brand-600 uppercase tracking-[0.25em] mb-1">Trung tâm Ngoại Ngữ Trung tâm ngoại ngữ Pallas</p>
               <h1 className="text-3xl font-black text-brand-800 uppercase tracking-wide">GIẤY CHỨNG NHẬN</h1>
               <p className="text-sm text-slate-500 font-semibold mt-1">Hoàn thành xuất sắc bài học</p>
             </div>
@@ -132,9 +132,9 @@ export const LessonCertificate: React.FC<LessonCertificateProps> = ({
               </div>
               <div className="text-right">
                 <div className="w-28 h-0.5 bg-slate-800 mb-2"></div>
-                <p className="text-xl font-black text-slate-800" style={{ fontFamily: 'Georgia, serif' }}>English Ms Trang</p>
+                <p className="text-xl font-black text-slate-800" style={{ fontFamily: 'Georgia, serif' }}>Trung tâm ngoại ngữ Pallas</p>
                 <p className="text-xs text-brand-600 font-bold mt-1">Giám đốc Trung tâm</p>
-                <p className="text-[10px] text-slate-400">Trung tâm Ngoại Ngữ English Ms Trang</p>
+                <p className="text-[10px] text-slate-400">Trung tâm Ngoại Ngữ Trung tâm ngoại ngữ Pallas</p>
               </div>
             </div>
           </div>

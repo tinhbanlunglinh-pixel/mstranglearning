@@ -75,13 +75,13 @@ export const CreativeMindMap: React.FC = () => {
          </div>
          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-               <h2 className="text-4xl font-black uppercase tracking-tight mb-2">ENGLISH MS TRANG</h2>
-               <p className="text-brand-100 font-bold opacity-90">Xây nền từ móng, chinh phục đỉnh cao - English Ms Trang</p>
+               <h2 className="text-4xl font-black uppercase tracking-tight mb-2">TRUNG TÂM NGOẠI NGỮ PALLAS</h2>
+               <p className="text-brand-100 font-bold opacity-90">Xây nền từ móng, chinh phục đỉnh cao - Trung tâm ngoại ngữ Pallas</p>
                <div className="mt-4 text-xs font-black tracking-[0.2em] opacity-60 uppercase">Creative Learning System</div>
             </div>
             <div className="flex flex-col items-center md:items-end gap-2 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
                <span className="text-sm">📞 Zalo/Phone: 0979.2222.10</span>
-               <a href="https://www.facebook.com/profile.php?id=61572690107644" target="_blank" className="text-sm underline hover:text-brand-200">Facebook English Ms Trang</a>
+               <a href="https://www.facebook.com/profile.php?id=61572690107644" target="_blank" className="text-sm underline hover:text-brand-200">Facebook Trung tâm ngoại ngữ Pallas</a>
             </div>
          </div>
       </div>
@@ -119,7 +119,7 @@ export const CreativeMindMap: React.FC = () => {
           {data && (
             <div className="animate-fade-in flex flex-col items-center">
                <div ref={canvasRef} className="bg-white p-10 rounded-[3rem] shadow-2xl border-[15px] border-slate-50 relative overflow-hidden w-full max-w-[1000px] aspect-[4/3] flex flex-col items-center justify-center">
-                  <div className="absolute top-10 right-10 text-brand-600 font-black text-sm uppercase opacity-30">ENGLISH MS TRANG</div>
+                  <div className="absolute top-10 right-10 text-brand-600 font-black text-sm uppercase opacity-30">TRUNG TÂM NGOẠI NGỮ PALLAS</div>
                   <div className="text-center bg-brand-50 p-8 rounded-full border-4 border-brand-200 shadow-xl mb-12">
                      <span className="text-8xl mb-2 block">{data.center?.emoji || '🌟'}</span>
                      <h2 className="text-4xl font-black text-slate-800 uppercase leading-none">{data.center?.title_en}</h2>

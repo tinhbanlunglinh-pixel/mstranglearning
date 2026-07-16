@@ -18,7 +18,7 @@ export const WritingSection: React.FC<WritingSectionProps> = ({ topic }) => {
       const data = await correctWriting(text, topic);
       setResult(data);
     } catch (e) {
-      alert("English Ms Trang đang bận một chút, con thử lại sau nhé!");
+      alert("Trung tâm ngoại ngữ Pallas đang bận một chút, con thử lại sau nhé!");
     } finally {
       setLoading(false);
     }
@@ -57,7 +57,7 @@ export const WritingSection: React.FC<WritingSectionProps> = ({ topic }) => {
                 disabled={loading || !text.trim()}
                 className="mt-6 w-full py-5 bg-brand-500 text-white rounded-[2rem] font-black text-2xl shadow-xl hover:bg-brand-400 transform transition-all active:scale-95 disabled:opacity-50 border-b-8 border-brand-700 active:border-b-0 uppercase tracking-tighter"
             >
-                {loading ? 'ENGLISH MS TRANG ĐANG CHẤM BÀI...' : '🚀 CHẤM ĐIỂM VÀ SỬA BÀI'}
+                {loading ? 'TRUNG TÂM NGOẠI NGỮ PALLAS ĐANG CHẤM BÀI...' : '🚀 CHẤM ĐIỂM VÀ SỬA BÀI'}
             </button>
         </div>
 
@@ -72,7 +72,7 @@ export const WritingSection: React.FC<WritingSectionProps> = ({ topic }) => {
                         </div>
                     </div>
                     <div className="flex-1 text-center md:text-left">
-                        <h3 className="text-2xl md:text-3xl font-black text-brand-800 mb-4 uppercase tracking-tight">Lời khen từ English Ms Trang 🌟</h3>
+                        <h3 className="text-2xl md:text-3xl font-black text-brand-800 mb-4 uppercase tracking-tight">Lời khen từ Trung tâm ngoại ngữ Pallas 🌟</h3>
                         <p className="text-xl md:text-2xl font-black text-slate-700 italic leading-relaxed">
                             "{renderFeedback(result.feedback)}"
                         </p>
@@ -106,7 +106,7 @@ export const WritingSection: React.FC<WritingSectionProps> = ({ topic }) => {
                <div className="bg-slate-900 rounded-[3rem] p-10 md:p-16 relative shadow-xl overflow-hidden group">
                   <div className="relative z-10">
                     <div className="inline-flex items-center gap-4 bg-highlight-400 text-slate-900 px-6 py-2.5 rounded-full font-black text-lg uppercase tracking-widest mb-8 shadow-lg border-b-4 border-highlight-600">
-                      <span>🏆</span> ENGLISH MS TRANG'S UPGRADE
+                      <span>🏆</span> TRUNG TÂM NGOẠI NGỮ PALLAS'S UPGRADE
                     </div>
                     
                     <div className="bg-white/5 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/10 shadow-inner">

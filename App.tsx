@@ -23,7 +23,7 @@ interface LogoProps {
   color?: string;
 }
 
-const MsTrangLogo = ({ className = "w-16 h-16", color = "currentColor" }: LogoProps) => (<div className={`relative ${className} flex items-center justify-center overflow-hidden rounded-xl bg-white`}><img src="https://i.postimg.cc/3xcLr6w5/logo.png" className="w-full h-full object-contain" alt="English Ms Trang Logo" /></div>);
+const MsTrangLogo = ({ className = "w-16 h-16", color = "currentColor" }: LogoProps) => (<div className={`relative ${className} flex items-center justify-center overflow-hidden rounded-xl bg-white`}><img src="https://i.postimg.cc/2S2xgbmX/logo.png" className="w-full h-full object-contain" alt="Trung tâm ngoại ngữ Pallas Logo" /></div>);
 
 function App() {
   // Simplified - only keeping the planner/learning tab
@@ -132,9 +132,9 @@ function App() {
 
   function getEvaluation(score: number) {
     const s = score || 0;
-    if (s >= 9) return { text: "XUẤT SẮC", emoji: "🌟", level: "EXCELLENT", praise: "Con là một ngôi sao sáng nhất lớp ENGLISH MS TRANG!" };
+    if (s >= 9) return { text: "XUẤT SẮC", emoji: "🌟", level: "EXCELLENT", praise: "Con là một ngôi sao sáng nhất lớp TRUNG TÂM NGOẠI NGỮ PALLAS!" };
     if (s >= 7) return { text: "KHÁ GIỎI", emoji: "🎯", level: "GREAT JOB", praise: "Con làm bài rất tuyệt vời, tiếp tục phát huy nhé!" };
-    if (s >= 5) return { text: "CỐ GẮNG", emoji: "💪", level: "GOOD EFFORT", praise: "Con đã nỗ lực rất nhiều, ENGLISH MS TRANG tự hào về con!" };
+    if (s >= 5) return { text: "CỐ GẮNG", emoji: "💪", level: "GOOD EFFORT", praise: "Con đã nỗ lực rất nhiều, TRUNG TÂM NGOẠI NGỮ PALLAS tự hào về con!" };
     return { text: "CẦN NỖ LỰC", emoji: "📚", level: "KEEP IT UP", praise: "Đừng nản lòng con nhé, bài sau mình làm tốt hơn nào!" };
   }
 
@@ -147,7 +147,7 @@ function App() {
           <div className="flex items-center gap-2 sm:gap-4 cursor-pointer">
             <MsTrangLogo className="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-xl sm:rounded-2xl p-1 sm:p-1.5 shadow-lg" color="#8B1C24" />
             <div className="flex flex-col">
-              <h1 className="text-base sm:text-xl md:text-3xl font-black text-highlight-400 uppercase tracking-tighter font-display">ENGLISH MS TRANG</h1>
+              <h1 className="text-base sm:text-xl md:text-3xl font-black text-highlight-400 uppercase tracking-tighter font-display">TRUNG TÂM NGOẠI NGỮ PALLAS</h1>
               <span className="text-[8px] sm:text-[10px] font-black text-white uppercase tracking-[0.1em] sm:tracking-[0.2em] opacity-90 font-sans hidden xs:block">Xây nền từ móng, chinh phục đỉnh cao</span>
             </div>
           </div>
@@ -246,7 +246,7 @@ function App() {
               <div className="bg-white rounded-2xl sm:rounded-[3rem] shadow-xl border-b-4 sm:border-b-[12px] border-r-4 sm:border-r-[12px] border-brand-100 p-4 sm:p-8 md:p-16 max-w-4xl mx-auto animate-fade-in text-center relative overflow-hidden ring-2 sm:ring-4 ring-white">
                 <div className="absolute top-0 left-0 w-full h-3 bg-brand-500"></div>
                 <MsTrangLogo className="w-20 h-20 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-8 drop-shadow-xl" color="#8B1C24" />
-                <h2 className="text-lg sm:text-2xl md:text-4xl font-black text-brand-800 mb-2 uppercase tracking-tighter font-display">Học Tiếng Anh cùng ENGLISH MS TRANG</h2>
+                <h2 className="text-lg sm:text-2xl md:text-4xl font-black text-brand-800 mb-2 uppercase tracking-tighter font-display">Học Tiếng Anh cùng TRUNG TÂM NGOẠI NGỮ PALLAS</h2>
                 <p className="text-xs sm:text-sm font-black text-slate-400 mb-4 sm:mb-8 uppercase italic opacity-60">"Xây nền từ móng, chinh phục đỉnh cao"</p>
 
                 <div className="space-y-8 text-left">
@@ -384,14 +384,14 @@ function App() {
           <div className="grid md:grid-cols-3 gap-12 items-start mb-16">
             <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
               <div className="bg-white p-4 rounded-[2rem] w-fit shadow-xl border-4 border-highlight-400"><MsTrangLogo className="w-20 h-20" color="#8B1C24" /></div>
-              <div><h3 className="font-black text-2xl text-highlight-400 uppercase leading-none font-display">ENGLISH MS TRANG</h3><p className="text-brand-100 font-black text-base mt-2 opacity-90 italic">"Xây nền từ móng, chinh phục đỉnh cao"</p></div>
+              <div><h3 className="font-black text-2xl text-highlight-400 uppercase leading-none font-display">TRUNG TÂM NGOẠI NGỮ PALLAS</h3><p className="text-brand-100 font-black text-base mt-2 opacity-90 italic">"Xây nền từ móng, chinh phục đỉnh cao"</p></div>
             </div>
             <div className="space-y-6 text-center md:text-left">
               <h4 className="font-black text-highlight-400 text-xl uppercase tracking-[0.2em] border-b-2 border-white/10 pb-2 font-sans">Liên Hệ</h4>
               <ul className="space-y-4 font-black text-brand-100 text-lg">
                 <li className="flex items-start gap-3">📍<span>CS1: SN 31 ngõ 77 Nguyễn Trãi, Phường Kinh Môn, TP Hải Phòng.</span></li>
                 <li className="flex items-start gap-3">📍<span>CS2: SN 347 Đường Vũ Mạnh Hùng, Phường Nhị Chiểu, TP Hải Phòng.</span></li>
-                <li className="flex items-center gap-3">📞<a href="tel:0979222210" className="hover:text-highlight-400 transition-colors">English Ms Trang: 0979.2222.10</a></li>
+                <li className="flex items-center gap-3">📞<a href="tel:0979222210" className="hover:text-highlight-400 transition-colors">Trung tâm ngoại ngữ Pallas: 0979.2222.10</a></li>
                 <li className="flex items-center gap-3">🌐<a href="https://www.facebook.com/profile.php?id=61572690107644" target="_blank" className="hover:text-highlight-400 transition-colors underline decoration-2">Fanpage Facebook</a></li>
               </ul>
             </div>
@@ -401,7 +401,7 @@ function App() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-brand-200 text-sm">
-            <p>© 2026 English Ms Trang. Xây nền từ móng, chinh phục đỉnh cao.</p>
+            <p>© 2026 Trung tâm ngoại ngữ Pallas. Xây nền từ móng, chinh phục đỉnh cao.</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
               <span className="text-white/20">|</span>

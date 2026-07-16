@@ -90,7 +90,7 @@ export const PracticeSection: React.FC<PracticeSectionProps> = ({ content, onSco
                                         )}
                                         <div className="bg-white/60 p-6 rounded-2xl border-2 border-current/10 shadow-inner">
                                             <p className="text-xl font-bold text-slate-600 leading-relaxed italic">
-                                                English Ms Trang gợi ý: <span className="text-brand-700">{q.explanation}</span>
+                                                Trung tâm ngoại ngữ Pallas gợi ý: <span className="text-brand-700">{q.explanation}</span>
                                             </p>
                                         </div>
                                     </div>

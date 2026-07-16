@@ -155,7 +155,7 @@ export const MindMapTab: React.FC = () => {
                 <div className="text-center space-y-6 w-full max-w-2xl">
                    <div className="inline-block bg-emerald-100 text-emerald-700 px-6 py-2 rounded-full text-sm font-black uppercase tracking-widest shadow-sm">BƯỚC TIẾP THEO →/div>
                    <h3 className="text-4xl md:text-5xl font-black text-emerald-800 font-display tracking-tight">🎤 LUYỆN THUYẾT TRÌNH</h3>
-                   <p className="text-xl text-slate-500 font-bold italic">"English Ms Trang AI s→soạn bài mẫu và chấm điểm bài nói của con!"</p>
+                   <p className="text-xl text-slate-500 font-bold italic">"Trung tâm ngoại ngữ Pallas AI s→soạn bài mẫu và chấm điểm bài nói của con!"</p>
                    <input 
                      type="text" 
                      placeholder="Nhập tên của con đ→in giấy khen nhé..." 

@@ -182,7 +182,7 @@ export enum LoadingStep {
   IDLE = 'Idle',
   ANALYZING = 'Analyzing content...',
   GENERATING_IMAGE = 'Generating magic image...',
-  GENERATING_AUDIO = 'Creating ENGLISH MS TRANG\'s voice...',
+  GENERATING_AUDIO = 'Creating TRUNG TÂM NGOẠI NGỮ PALLAS\'s voice...',
   COMPLETED = 'Completed!'
 }
 

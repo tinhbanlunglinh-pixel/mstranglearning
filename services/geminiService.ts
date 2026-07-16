@@ -9,13 +9,12 @@ const OLD_API_KEY_STORAGE = 'nextgen_english_api_key';
 const MODEL_STORAGE = 'english_mstrang_selected_model';
 const OLD_MODEL_STORAGE = 'nextgen_english_selected_model';
 
-// Model fallback order as per AI_INSTRUCTIONS.md
-// Default: gemini-3-pro-preview
-// Fallback: gemini-3-flash-preview →gemini-3-pro-preview →gemini-2.5-flash
+// Default: gemini-1.5-pro
+// Fallback: gemini-1.5-flash → gemini-2.0-flash
 export const AVAILABLE_MODELS = [
-  { id: 'gemini-3-pro-preview', name: 'Gemini 3 Pro', isDefault: true },
-  { id: 'gemini-3-flash-preview', name: 'Gemini 3 Flash' },
-  { id: 'gemini-2.5-flash', name: 'Gemini 2.5 Flash' },
+  { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', isDefault: true },
+  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash' },
+  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash' },
 ];
 
 export const getApiKey = (): string | null => {
@@ -329,7 +328,7 @@ export const generateAudioFromContent = async (text: string): Promise<string> =>
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash-preview-tts",
+        model: "gemini-2.0-flash-exp",
         contents: [{ parts: [{ text }] }],
         config: {
           responseModalities: [Modality.AUDIO],
@@ -358,7 +357,7 @@ export const generateAudioFromContent = async (text: string): Promise<string> =>
 export const generateLessonPlan = async (topicInput?: string, textInput?: string, images: string[] = []): Promise<LessonPlan> => {
   const ai = getAI();
   const imageParts = images.map(data => ({ inlineData: { data, mimeType: 'image/jpeg' } }));
-  const prompt = `ENGLISH MS TRANG AI - EXPERT PEDAGOGY MODE (CHUYÊN GIA TIẾNG ANH).
+  const prompt = `TRUNG TÂM NGOẠI NGỮ PALLAS AI - EXPERT PEDAGOGY MODE (CHUYÊN GIA TIẾNG ANH).
   TASK: Analyze the provided content (text/images) and create a comprehensive lesson plan.
   
   ===== ⚠️⚠️⚠️ CRITICAL WARNING: ZERO TOLERANCE FOR GRADING ERRORS ⚠️⚠️⚠️ =====
@@ -896,7 +895,7 @@ export const generateLessonPlan = async (topicInput?: string, textInput?: string
 export const analyzeImageAndCreateContent = async (images: string[], mimeType: string, char: CharacterProfile, mode: AppMode, customPrompt?: string, topic?: string, text?: string): Promise<ContentResult> => {
   const ai = getAI();
   const imageParts = images.map(data => ({ inlineData: { data, mimeType } }));
-  const prompt = `ENGLISH MS TRANG AI - CREATIVE STORYTELLER.
+  const prompt = `TRUNG TÂM NGOẠI NGỮ PALLAS AI - CREATIVE STORYTELLER.
   
   Analyze the input and create:
   1. A magical story featuring ${char.name}.
@@ -949,7 +948,7 @@ export const generateMindMap = async (content: any, mode: MindMapMode): Promise<
   const ai = getAI();
   return callWithFallback(async (modelId: string) => {
     const response = await ai.models.generateContent({
-      model: modelId, // Cho phép fallback thay vì hardcode gemini-3-pro-preview
+      model: modelId, // Cho phép fallback thay vì hardcode gemini-1.5-pro
       contents: `Create a professional Mind Map following Tony Buzan's principles for: ${JSON.stringify(content)}. 
       Structure: Root node is the main topic. Child nodes are key sub-concepts with emojis. 
       Output strictly in JSON format matching the schema.`,

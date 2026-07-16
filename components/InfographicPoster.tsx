@@ -102,7 +102,7 @@ export const InfographicPoster: React.FC<InfographicPosterProps> = ({ lesson }) 
                   <div className="flex-1">
                     <div className="bg-highlight-400 text-brand-900 px-6 py-1 rounded-full text-sm font-black uppercase tracking-[0.4em] mb-4 w-fit shadow-md">TRANG 1: KIẾN THỨC →/div>
                     <h1 className="text-4xl font-black text-white leading-tight uppercase tracking-tighter line-clamp-2">{lesson.topic}</h1>
-                    <p className="text-brand-100 text-lg font-bold opacity-80 mt-2">English Ms Trang - Xây nền từ móng, chinh phục đỉnh cao</p>
+                    <p className="text-brand-100 text-lg font-bold opacity-80 mt-2">Trung tâm ngoại ngữ Pallas - Xây nền từ móng, chinh phục đỉnh cao</p>
                   </div>
               </div>
 
@@ -121,7 +121,7 @@ export const InfographicPoster: React.FC<InfographicPosterProps> = ({ lesson }) 
                       ))}
                   </div>
               </div>
-              <div className="mt-8 w-full text-center text-xs font-black text-brand-200 uppercase tracking-[0.5em]">Xây nền từ móng, chinh phục đỉnh cao - English Ms Trang</div>
+              <div className="mt-8 w-full text-center text-xs font-black text-brand-200 uppercase tracking-[0.5em]">Xây nền từ móng, chinh phục đỉnh cao - Trung tâm ngoại ngữ Pallas</div>
           </div>
           <button onClick={() => downloadPosterPage('poster-p1', 1)} disabled={downloadingPage === 1} className="bg-brand-600 text-white px-12 py-5 rounded-full font-black text-2xl shadow-xl hover:bg-brand-500 active:translate-y-1 transition-all uppercase tracking-tighter">
             {downloadingPage === 1 ? 'ĐANG X→LÝ...' : '📥 TẢI SUMMARY TRANG 1'}
@@ -177,12 +177,12 @@ export const InfographicPoster: React.FC<InfographicPosterProps> = ({ lesson }) 
                   {lesson.teacherTips && (
                     <div className="p-6 bg-brand-900 text-brand-50 rounded-[2rem] shadow-xl border-l-[15px] border-brand-500 mt-auto relative overflow-hidden">
                          <div className="absolute top-0 right-0 p-4 text-5xl opacity-10">👩‍→</div>
-                         <h4 className="font-black text-highlight-400 text-xs tracking-[0.3em] mb-1 uppercase">ENGLISH MS TRANG'S TIPS</h4>
+                         <h4 className="font-black text-highlight-400 text-xs tracking-[0.3em] mb-1 uppercase">TRUNG TÂM NGOẠI NGỮ PALLAS'S TIPS</h4>
                          <p className="text-base font-bold italic leading-relaxed opacity-90 line-clamp-3">{lesson.teacherTips}</p>
                     </div>
                   )}
               </div>
-              <div className="mt-8 w-full text-center text-xs font-black text-brand-300 uppercase tracking-[0.5em]">Xây nền từ móng, chinh phục đỉnh cao - English Ms Trang</div>
+              <div className="mt-8 w-full text-center text-xs font-black text-brand-300 uppercase tracking-[0.5em]">Xây nền từ móng, chinh phục đỉnh cao - Trung tâm ngoại ngữ Pallas</div>
           </div>
           <button onClick={() => downloadPosterPage('poster-p2', 2)} disabled={downloadingPage === 2} className="bg-indigo-600 text-white px-12 py-5 rounded-full font-black text-2xl shadow-xl hover:bg-indigo-500 active:translate-y-1 transition-all uppercase tracking-tighter">
             {downloadingPage === 2 ? 'ĐANG X→LÝ...' : '📥 TẢI SUMMARY TRANG 2'}

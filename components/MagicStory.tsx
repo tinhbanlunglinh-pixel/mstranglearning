@@ -205,7 +205,7 @@ export const MagicStory: React.FC = () => {
           <div className="space-y-12 animate-fade-in max-w-5xl mx-auto">
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-black text-slate-800 font-display mb-3">Tạo câu chuyện phép thuật</h2>
-                <p className="text-slate-500 text-lg">Chọn nhân vật yêu thích và để cho English Ms Trang nghe cuộc phiêu lưu!</p>
+                <p className="text-slate-500 text-lg">Chọn nhân vật yêu thích và để cho Trung tâm ngoại ngữ Pallas nghe cuộc phiêu lưu!</p>
             </div>
 
             <section>
@@ -382,7 +382,7 @@ export const MagicStory: React.FC = () => {
                     {state.loadingStep}
                 </h2>
                 <p className="text-slate-500 text-lg font-bold">
-                    English Ms Trang AI đang chuẩn bị câu chuyện cho con...
+                    Trung tâm ngoại ngữ Pallas AI đang chuẩn bị câu chuyện cho con...
                 </p>
             </div>
           </div>

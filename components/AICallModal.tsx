@@ -120,7 +120,7 @@ export const AICallModal: React.FC<AICallModalProps> = ({ isOpen, onClose, story
       const questionsList = speakingQuestions?.map((q, i) => `${i+1}. ${q.question}`).join('\n') || "";
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.5-flash-native-audio-preview-12-2025',
+        model: 'gemini-2.0-flash-exp',
         callbacks: {
           onopen: () => {
             if (isClosingRef.current) return;
@@ -183,7 +183,7 @@ export const AICallModal: React.FC<AICallModalProps> = ({ isOpen, onClose, story
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } } },
-          systemInstruction: `You are English Ms Trang, a polyglot English teacher at "ENGLISH MS TRANG". 
+          systemInstruction: `You are Trung tâm ngoại ngữ Pallas, a polyglot English teacher at "TRUNG TÂM NGOẠI NGỮ PALLAS". 
           
           CAPABILITIES:
           - Polyglot: Speak any language requested, but primarily English.
@@ -234,7 +234,7 @@ export const AICallModal: React.FC<AICallModalProps> = ({ isOpen, onClose, story
         <div className="flex flex-col items-center justify-center space-y-10">
             <div className="text-center">
                 <div className="inline-block bg-brand-100 text-brand-700 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4">POLYGLOT TEACHER AI</div>
-                <h3 className="text-3xl font-black text-slate-800 font-sans mb-2 tracking-tight">Speak with English Ms Trang</h3>
+                <h3 className="text-3xl font-black text-slate-800 font-sans mb-2 tracking-tight">Speak with Trung tâm ngoại ngữ Pallas</h3>
                 <p className="text-slate-400 font-medium italic">"Practice speaking English using your cards!"</p>
             </div>
 
@@ -251,7 +251,7 @@ export const AICallModal: React.FC<AICallModalProps> = ({ isOpen, onClose, story
 
             <div className="min-h-[2rem] text-center">
                 {status === 'connecting' && <p className="text-brand-500 font-black animate-pulse">Connecting to Polyglot Teacher...</p>}
-                {status === 'connected' && <p className={`font-black text-2xl tracking-tight transition-colors ${isSpeaking ? 'text-brand-700' : 'text-emerald-600'}`}>{isSpeaking ? "English Ms Trang is speaking..." : "Listening to you..."}</p>} you..."}</p>}
+                {status === 'connected' && <p className={`font-black text-2xl tracking-tight transition-colors ${isSpeaking ? 'text-brand-700' : 'text-emerald-600'}`}>{isSpeaking ? "Trung tâm ngoại ngữ Pallas is speaking..." : "Listening to you..."}</p>} you..."}</p>}
                 {status === 'permission-denied' && <p className="text-red-500 font-black">Lỗi: Bé hãy cho phép truy cập Micro nhé!</p>}
                 {status === 'device-not-found' && <p className="text-red-500 font-black">Lỗi: Không tìm thấy Micro trên máy!</p>}
                 {status === 'error' && <p className="text-red-500 font-black">Lỗi kết nối. Bé hãy thử lại nhé!</p>}

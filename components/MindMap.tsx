@@ -91,7 +91,7 @@ export const MindMap: React.FC<MindMapProps> = ({ data }) => {
           
           <div className="absolute top-10 right-12 z-40 flex flex-col items-center bg-white/80 p-4 rounded-3xl border border-brand-100 backdrop-blur-sm">
              <div className="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center text-white text-2xl mb-1 shadow-lg">👩‍→/div>
-             <span className="font-black text-[12px] uppercase tracking-widest text-brand-900">Trung Tâm English Ms Trang</span>
+             <span className="font-black text-[12px] uppercase tracking-widest text-brand-900">Trung Tâm Trung tâm ngoại ngữ Pallas</span>
           </div>
 
           <div className="absolute z-30 flex flex-col items-center justify-center text-center bg-white border-[10px] border-brand-500 rounded-[3rem] shadow-2xl p-6" style={{ left: centerX, top: centerY, width: '320px', height: '220px', transform: 'translate(-50%, -50%) rotate(-1deg)' }}>

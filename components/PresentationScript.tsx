@@ -55,7 +55,7 @@ export const PresentationScriptView: React.FC<PresentationScriptProps> = ({ scri
       setIsRecording(true); 
       setEvaluation(null);
     } catch (err) { 
-      alert("Bé hãy bật Micro nhé! English Ms Trang không nghe thấy con nói."); 
+      alert("Bé hãy bật Micro nhé! Trung tâm ngoại ngữ Pallas không nghe thấy con nói."); 
     }
   };
 
@@ -105,7 +105,7 @@ export const PresentationScriptView: React.FC<PresentationScriptProps> = ({ scri
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 border-b-4 border-emerald-100 pb-8 gap-6">
           <div className="text-left">
             <h3 className="text-4xl font-black text-emerald-800 uppercase tracking-tighter mb-1">KỊCH BẢN THUYẾT TRÌNH</h3>
-            <p className="text-emerald-500 font-bold italic">Luyện tập cùng English Ms Trang AI nhé!</p>
+            <p className="text-emerald-500 font-bold italic">Luyện tập cùng Trung tâm ngoại ngữ Pallas AI nhé!</p>
           </div>
           <button 
             onClick={handlePlayModel} 
@@ -172,7 +172,7 @@ export const PresentationScriptView: React.FC<PresentationScriptProps> = ({ scri
             <div className="flex gap-2">
               {[1, 2, 3].map(i => <div key={i} className="w-4 h-4 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}></div>)}
             </div>
-            <p className="text-emerald-300 font-black text-3xl uppercase tracking-widest">English Ms Trang đang chấm điểm...</p>
+            <p className="text-emerald-300 font-black text-3xl uppercase tracking-widest">Trung tâm ngoại ngữ Pallas đang chấm điểm...</p>
           </div>
         )}
 
@@ -213,7 +213,7 @@ export const PresentationScriptView: React.FC<PresentationScriptProps> = ({ scri
               <div className="flex flex-col items-center mb-10">
                 <div className="w-28 h-28 bg-emerald-600 rounded-3xl flex items-center justify-center text-white text-6xl mb-6 shadow-2xl transform rotate-3">
                   🗣→                </div>
-                <h2 className="text-2xl font-black text-emerald-800 uppercase tracking-[0.4em] font-sans mb-2">TRUNG TÂM ANH NGỮ ENGLISH MS TRANG</h2>
+                <h2 className="text-2xl font-black text-emerald-800 uppercase tracking-[0.4em] font-sans mb-2">TRUNG TÂM ANH NGỮ TRUNG TÂM NGOẠI NGỮ PALLAS</h2>
                 <h1 className="text-7xl font-black text-brand-600 uppercase font-display tracking-tight border-b-8 border-brand-100 pb-2">EXCELLENT SPEAKING AWARD</h1>
               </div>
 
@@ -242,7 +242,7 @@ export const PresentationScriptView: React.FC<PresentationScriptProps> = ({ scri
                  <div className="text-right">
                     <div className="text-center">
                         <div className="w-40 h-1.5 bg-emerald-800 mb-4 ml-auto rounded-full"></div>
-                        <p className="text-4xl font-black text-emerald-900 italic font-serif">English Ms Trang</p>
+                        <p className="text-4xl font-black text-emerald-900 italic font-serif">Trung tâm ngoại ngữ Pallas</p>
                         <p className="text-sm font-black text-emerald-500 uppercase tracking-widest">Head Teacher</p>
                     </div>
                     <p className="text-sm font-black text-slate-400 mt-8 italic">Phát hành vào {currentTime}</p>

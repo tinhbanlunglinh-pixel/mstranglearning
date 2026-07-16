@@ -1,6 +1,6 @@
 ﻿{
-  "name": "ENGLISH MS TRANG VERSION 3",
-  "description": "Xây nền từ móng, chinh phục đỉnh cao - English Ms Trang. Hệ thống AI hỗ trợ giảng dạy và học tập Tiếng Anh.",
+  "name": "TRUNG TÂM NGOẠI NGỮ PALLAS VERSION 3",
+  "description": "Xây nền từ móng, chinh phục đỉnh cao - Trung tâm ngoại ngữ Pallas. Hệ thống AI hỗ trợ giảng dạy và học tập Tiếng Anh.",
   "requestFramePermissions": [
     "microphone",
     "camera"
