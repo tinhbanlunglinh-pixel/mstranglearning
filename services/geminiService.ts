@@ -12,9 +12,9 @@ const OLD_MODEL_STORAGE = 'nextgen_english_selected_model';
 // Default: gemini-1.5-pro
 // Fallback: gemini-1.5-flash → gemini-2.0-flash
 export const AVAILABLE_MODELS = [
-  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Nhanh, miễn phí, phù hợp nhất cho hầu hết tác vụ.', isDefault: true },
+  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Mới nhất, tốc độ cực nhanh, phản hồi thông minh, ổn định nhất (Khuyên dùng).', isDefault: true },
+  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Nhanh, miễn phí, phù hợp cho hầu hết tác vụ.' },
   { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Thông minh nhất, hỗ trợ xử lý phức tạp.' },
-  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Model thế hệ mới, miễn phí, tốc độ cực nhanh.' },
 ];
 
 export const getApiKey = (): string | null => {
@@ -109,7 +109,7 @@ export const callWithFallback = async <T>(
   // Nếu đã thử tất cả các model và vẫn lỗi
   const finalErrorMsg = lastError?.message || '';
   if (finalErrorMsg.includes('503') || finalErrorMsg.includes('429') || finalErrorMsg.includes('high demand')) {
-    throw new Error('Hệ thống AI của Google đang bị quá tải do nhu cầu cao (Lỗi 503). Hệ thống đã tự động thử lại nhiều lần bằng các model dự phòng nhưng chưa thành công. Vui lòng đợi khoảng 1-2 phút rồi ấn thử lại nhé!');
+    throw new Error('⚠️ LỖI HỆ THỐNG: Hệ thống AI của Google đang bị quá tải (Lỗi 503) HOẶC API Key của bạn đã hết lượt dùng miễn phí (Lỗi 429 - Rate Limit). Hệ thống đã thử các model dự phòng nhưng chưa thành công. Vui lòng đợi 1-2 phút rồi thử lại, hoặc kiểm tra lại hạn mức API Key của bạn!');
   }
 
   throw lastError || new Error('Tất cả các model đều thất bại. Vui lòng kiểm tra lại kết nối mạng hoặc API key.');
@@ -881,6 +881,10 @@ export const generateLessonPlan = async (topicInput?: string, textInput?: string
   inputParts.push({ text: prompt });
 
   // Use fallback mechanism - automatically retry with next model if current fails
+  const selectedModelId = getSelectedModel();
+  const startIndex = AVAILABLE_MODELS.findIndex(m => m.id === selectedModelId);
+  const startModelIndex = startIndex >= 0 ? startIndex : 0;
+
   return callWithFallback(async (modelId: string) => {
     console.log(`🤖 Đang thử với model: ${modelId}`);
     const response = await ai.models.generateContent({
@@ -889,7 +893,7 @@ export const generateLessonPlan = async (topicInput?: string, textInput?: string
       config: { responseMimeType: "application/json", responseSchema: lessonSchema }
     });
     return safeJsonParse<LessonPlan>(response.text);
-  });
+  }, startModelIndex);
 };
 
 export const analyzeImageAndCreateContent = async (images: string[], mimeType: string, char: CharacterProfile, mode: AppMode, customPrompt?: string, topic?: string, text?: string): Promise<ContentResult> => {
@@ -906,6 +910,10 @@ export const analyzeImageAndCreateContent = async (images: string[], mimeType: s
   Source material: Topic: ${topic || "N/A"}, Text: ${text || "N/A"}.
   Character context: ${char.promptContext}.`;
 
+  const selectedModelId = getSelectedModel();
+  const startIndex = AVAILABLE_MODELS.findIndex(m => m.id === selectedModelId);
+  const startModelIndex = startIndex >= 0 ? startIndex : 0;
+
   return callWithFallback(async (modelId: string) => {
     console.log(`🤖 Storyteller - Đang thử với model: ${modelId}`);
     const response = await ai.models.generateContent({
@@ -914,7 +922,7 @@ export const analyzeImageAndCreateContent = async (images: string[], mimeType: s
       config: { responseMimeType: "application/json", responseSchema: contentResultSchema }
     });
     return safeJsonParse<ContentResult>(response.text);
-  });
+  }, startModelIndex);
 };
 
 const safeJsonParse = <T>(text: string): T => {
@@ -946,20 +954,28 @@ const contentResultSchema = {
 
 export const generateMindMap = async (content: any, mode: MindMapMode): Promise<MindMapData> => {
   const ai = getAI();
+  const selectedModelId = getSelectedModel();
+  const startIndex = AVAILABLE_MODELS.findIndex(m => m.id === selectedModelId);
+  const startModelIndex = startIndex >= 0 ? startIndex : 0;
+
   return callWithFallback(async (modelId: string) => {
     const response = await ai.models.generateContent({
-      model: modelId, // Cho phép fallback thay vì hardcode gemini-1.5-pro
+      model: modelId,
       contents: `Create a professional Mind Map following Tony Buzan's principles for: ${JSON.stringify(content)}. 
       Structure: Root node is the main topic. Child nodes are key sub-concepts with emojis. 
       Output strictly in JSON format matching the schema.`,
       config: { responseMimeType: "application/json", responseSchema: mindMapSchema }
     });
     return safeJsonParse<MindMapData>(response.text);
-  });
+  }, startModelIndex);
 };
 
 export const evaluateSpeech = async (base64Audio: string): Promise<SpeechEvaluation> => {
   const ai = getAI();
+  const selectedModelId = getSelectedModel();
+  const startIndex = AVAILABLE_MODELS.findIndex(m => m.id === selectedModelId);
+  const startModelIndex = startIndex >= 0 ? startIndex : 0;
+
   return callWithFallback(async (modelId: string) => {
     const response = await ai.models.generateContent({
       model: modelId,
@@ -967,7 +983,7 @@ export const evaluateSpeech = async (base64Audio: string): Promise<SpeechEvaluat
       config: { responseMimeType: "application/json", responseSchema: speechEvaluationSchema }
     });
     return safeJsonParse<SpeechEvaluation>(response.text);
-  });
+  }, startModelIndex);
 };
 
 export const generateStoryImage = async (prompt: string, style: string, ratio: ImageRatio): Promise<string> => {
