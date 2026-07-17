@@ -208,22 +208,52 @@ function App() {
                 </a>
               </div>
 
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">🤖 Chọn Model AI</label>
-                <div className="grid gap-2">
-                  {AVAILABLE_MODELS.map((model) => (
-                    <button
-                      key={model.id}
-                      onClick={() => setSelectedModelId(model.id)}
-                      className={`p-3 rounded-xl border-2 text-left transition-all ${selectedModelId === model.id
-                        ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-slate-200 hover:border-brand-300'
-                      }`}
-                    >
-                      <div className="font-bold text-sm">{model.name}</div>
-                      <div className="text-xs text-slate-500">{model.description}</div>
-                    </button>
-                  ))}
+              <div className="pt-2">
+                <label className="block text-[13px] font-black text-[#00B06B] uppercase tracking-wider mb-3">Chọn Model AI</label>
+                <div className="grid gap-3">
+                  {(AVAILABLE_MODELS as any[]).map((model) => {
+                    const isSelected = selectedModelId === model.id;
+                    const getIcon = () => {
+                      if (model.icon === 'shield') return (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#00B06B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" /></svg>
+                      );
+                      if (model.icon === 'sparkles') return (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                      );
+                      return (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m14-6h2m-2 6h2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+                      );
+                    };
+
+                    const getBadgeStyle = () => {
+                      if (model.badge === 'KHUYÊN DÙNG') return 'bg-[#00B06B] text-white';
+                      if (model.badge === 'MỚI NHẤT') return 'bg-[#F1F5F9] text-[#64748B]';
+                      return 'bg-[#F1F5F9] text-[#64748B]';
+                    };
+
+                    return (
+                      <button
+                        key={model.id}
+                        onClick={() => setSelectedModelId(model.id)}
+                        className={`p-4 rounded-3xl border-2 text-left transition-all flex items-center justify-between group ${isSelected ? 'border-[#00B06B] bg-white ring-4 ring-[#00B06B]/10' : 'border-slate-100 bg-[#FAFAFA] hover:border-slate-200 hover:bg-white'}`}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className={`p-2.5 rounded-2xl bg-white shadow-sm border flex items-center justify-center ${isSelected ? 'border-[#00B06B]/20' : 'border-slate-100'}`}>
+                            {getIcon()}
+                          </div>
+                          <div>
+                            <div className={`font-black text-lg leading-tight ${isSelected ? 'text-slate-800' : 'text-slate-700'}`}>{model.name}</div>
+                            <div className="text-[13px] font-medium text-slate-500 mt-1">{model.description}</div>
+                          </div>
+                        </div>
+                        {model.badge && (
+                          <span className={`text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider ${getBadgeStyle()}`}>
+                            {model.badge}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
