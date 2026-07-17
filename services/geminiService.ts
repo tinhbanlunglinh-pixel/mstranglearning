@@ -12,9 +12,9 @@ const OLD_MODEL_STORAGE = 'nextgen_english_selected_model';
 // Default: gemini-1.5-pro
 // Fallback: gemini-1.5-flash → gemini-2.0-flash
 export const AVAILABLE_MODELS = [
-  { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', isDefault: true },
-  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash' },
-  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash' },
+  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Nhanh, miễn phí, phù hợp nhất cho hầu hết tác vụ.', isDefault: true },
+  { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Thông minh nhất, hỗ trợ xử lý phức tạp.' },
+  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Model thế hệ mới, miễn phí, tốc độ cực nhanh.' },
 ];
 
 export const getApiKey = (): string | null => {

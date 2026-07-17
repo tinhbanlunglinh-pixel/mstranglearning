@@ -170,7 +170,7 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               <span className="text-white text-xs sm:text-sm font-bold hidden sm:block">API Key</span>
-              {!apiKeyValid && <span className="text-red-400 text-[10px] sm:text-xs font-bold">Chưa có key!</span>}
+              {!apiKeyValid && <span className="text-red-400 text-[10px] sm:text-xs font-bold">Lấy API key để sử dụng app</span>}
             </button>
           </div>
         </div>
@@ -199,7 +199,7 @@ function App() {
                   className="w-full p-3 border-2 border-brand-200 rounded-xl focus:border-brand-500 outline-none"
                 />
                 <a
-                  href="https://aistudio.google.com/apikey"
+                  href="https://aistudio.google.com/api-keys"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-500 text-xs font-bold hover:underline mt-1 inline-block"
